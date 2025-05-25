@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('token');
+            $table->integer('connection_id');
+            $table->string('user_image');
+            $table->enum('user_status',['Offline','Online']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
